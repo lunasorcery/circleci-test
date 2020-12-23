@@ -1,7 +1,7 @@
 all: hello
 
 hello: main.cpp
-	clang main.cpp -o hello -lfmt -lstdc++ -O3 -std=c++17
+	$(CXX) main.cpp -o hello -lfmt -lstdc++ -O3 -std=c++17
 
 test: hello
 	./hello
