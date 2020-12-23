@@ -9,6 +9,7 @@ jobs:
     executor: exectr
     steps:
       - checkout
+      - run: apt-get update
       - run: apt-get install python3-pip
       - run: pip3 install meson
       - run: meson setup build
