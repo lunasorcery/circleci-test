@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: ./../../vcpkg install fmt
+          command: ./../../vcpkg/vcpkg install fmt
       - run:
           name: Compile
           command: make all
