@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - run: apt-get update
-      - run: apt-get install python3-pip
+      - run: apt-get install -y python3-pip
       - run: pip3 install meson
       - run: meson setup build
       - run: meson compile -C build
