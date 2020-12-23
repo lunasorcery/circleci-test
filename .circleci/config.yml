@@ -2,7 +2,7 @@ version: 2.1
 executors:
   exectr:
     docker:
-      – image: dockerben/cpptemplate:latest
+      - image: dockerben/cpptemplate:latest
 
 jobs:
   build:
