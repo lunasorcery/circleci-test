@@ -10,14 +10,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: install the build system
+          name: install the build system # todo: put this in the docker image
           command: |
             apt-get update
             apt-get install -y python3-pip pkg-config
             pip3 install meson
-      - run:
-          name: fetch the dependencies
-          command: ./../../vcpkg/vcpkg install fmt
       - run:
           name: configure our milkshake
           command: meson setup build

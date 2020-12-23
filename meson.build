@@ -1,3 +1,5 @@
-project('tutorial', 'cpp', default_options : ['cpp_std=c++17'])
-fmtdep = dependency('fmt', version : '>=7.0.0')
-executable('demo', 'main.cpp', dependencies: [fmtdep])
+project('tutorial', 'cpp', default_options : ['cpp_std=c++14'])
+
+fmt_dep = subproject('fmt').get_variable('fmt_dep')
+
+executable('demo', 'main.cpp', dependencies: fmt_dep)
