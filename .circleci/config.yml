@@ -9,11 +9,21 @@ jobs:
     executor: exectr
     steps:
       - checkout
-      - run: apt-get update
-      - run: apt-get install -y python3-pip
-      - run: pip3 install meson
-      - run: meson setup build
-      - run: meson compile -C build
+      - run:
+          name: install the build system
+          command: |
+            apt-get update
+            apt-get install -y python3-pip
+            pip3 install meson
+      - run:
+          name: fetch the dependencies
+          command: ./../../vcpkg/vcpkg install fmt
+      - run:
+          name: configure our milkshake
+          command: meson setup build
+      - run:
+          name: compile the thing
+          command: meson compile -C build
 
 workflows:
   version: 2
