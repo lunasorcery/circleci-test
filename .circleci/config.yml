@@ -13,7 +13,7 @@ jobs:
           name: install the build system
           command: |
             apt-get update
-            apt-get install -y python3-pip
+            apt-get install -y python3-pip pkg-config
             pip3 install meson
       - run:
           name: fetch the dependencies
