@@ -1,20 +1,12 @@
 version: 2.1
-executors:
-  exectr:
-    docker:
-      - image: dockerben/cpptemplate:latest
 
 jobs:
   build:
-    executor: exectr
+    docker:
+      - image: cimg/rust:1.48.0
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: ./../../vcpkg/vcpkg install fmt
-      - run:
-          name: Compile
-          command: make all
+      - run: cargo --version
 
 workflows:
   version: 2
