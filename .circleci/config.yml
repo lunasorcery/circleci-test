@@ -9,12 +9,9 @@ jobs:
     executor: exectr
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: ./../../vcpkg/vcpkg install fmt
-      - run:
-          name: Compile
-          command: make all
+      - run: pip3 install meson
+      - run: meson setup build
+      - run: meson compile -C build
 
 workflows:
   version: 2
