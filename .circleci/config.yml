@@ -1,11 +1,18 @@
 version: 2
 
+executors:
+  exectr:
+    docker:
+      – image: dockerben/cpptemplate:latest
+
 jobs:
   build:
-    docker:
-      - image: gcc:8.2
+    executor: exectr
     steps:
       - checkout
+      - run:
+          name: Install dependencies
+          command: ./../../vcpkg install fmt
       - run:
           name: Compile
           command: make all
