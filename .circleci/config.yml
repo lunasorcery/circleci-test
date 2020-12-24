@@ -2,7 +2,7 @@ version: 2.1
 executors:
   exectr:
     docker:
-      - image: dockerben/cpptemplate:latest
+      - image: lunasorcery/meson-template:latest
 
 jobs:
   build:
@@ -10,17 +10,14 @@ jobs:
     steps:
       - checkout
       - run:
-          name: install the build system # todo: put this in the docker image
-          command: |
-            apt-get update
-            apt-get install -y python3-pip pkg-config ninja-build
-            pip3 install meson
-      - run:
-          name: configure our milkshake
+          name: Configure our milkshake
           command: meson setup build
       - run:
-          name: compile the thing
+          name: Construct our milkshake
           command: meson compile -C build
+      - run:
+          name: Drink our milkshake
+          command: ./build/demo
 
 workflows:
   version: 2
