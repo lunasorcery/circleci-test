@@ -2,7 +2,7 @@ version: 2.1
 executors:
   exectr:
     docker:
-      - image: lunasorcery/meson-template:0.1
+      - image: lunasorcery/meson-template:0.0.1
 
 jobs:
   build:
