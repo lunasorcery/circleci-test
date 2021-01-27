@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Configure our milkshake
+          name: Configure our milkshake 🥛
           command: meson setup build
       - run:
           name: Construct our milkshake
