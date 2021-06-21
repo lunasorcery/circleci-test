@@ -13,7 +13,7 @@ jobs:
           command: sudo apt update && sudo apt install inkscape imagemagick
       - run:
           name: Inkscape help
-          command: inkscape --help
+          command: inkscape --version && inkscape --help
       - run:
           name: Build the site!
           command: ./build-site.py
