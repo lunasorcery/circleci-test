@@ -10,7 +10,7 @@ jobs:
           command:  pip install -r requirements.txt
       - run:
           name: Fetch system dependencies
-          command: sudo apt update && sudo apt install inkscape imagemagick
+          command: sudo add-apt-repository ppa:inkscape.dev/stable && sudo apt-get update && sudo apt install inkscape imagemagick
       - run:
           name: Inkscape help
           command: inkscape --version && inkscape --help
