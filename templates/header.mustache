@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+		<title>{{#meta-subtitle}}{{meta-subtitle}} | {{/meta-subtitle}}{{meta-title}}</title>
+		<meta property="og:title" content="{{#meta-subtitle}}{{meta-subtitle}} | {{/meta-subtitle}}{{meta-title}}"/>
+		<meta name="twitter:title" content="{{#meta-subtitle}}{{meta-subtitle}} | {{/meta-subtitle}}{{meta-title}}"/>
+
+		<meta name="apple-mobile-web-app-title" content="exe.gfx"/>
+		<link rel="manifest" href="/manifest.json?cache={{hash-manifest-json}}"/>
+
+		<link rel="shortcut icon" href="/favicon.ico?cache={{hash-favicon-ico}}"/>
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png?cache={{hash-apple-touch-icon-png}}"/>
+		<link rel="image_src" href="/apple-touch-icon.png?cache={{hash-apple-touch-icon-png}}"/>
+
+		<meta name="description" content="{{meta-description}}"/>
+		<meta property="og:description" content="{{meta-description}}"/>
+		<meta name="twitter:description" content="{{meta-description}}"/>
+	
+		<meta property="og:image" content="{{meta-image}}"/>
+		<meta name="twitter:image" content="{{meta-image}}"/>
+	
+		<meta name="twitter:card" content="{{meta-twitter-card-type}}"/>
+		<meta name="twitter:creator" content="@lunasorcery"/>
+
+		<link href="/fonts.css?cache={{hash-fonts-css}}" rel="stylesheet"/>
+		<link href="/style.css?cache={{hash-style-css}}" rel="stylesheet"/>
+	</head>
+	<body>
+{{#enable-language-dropdown}}
+		<div class="switch switch-left switch-dropdown" id="switch-lang" tabindex="0">
+			<label class="label">
+				{{{svg-globe}}}
+				<span>{{#i18n}}global.toggle-lang{{/i18n}}</span>
+			</label>
+			<div class="mousetrap">
+				<ul class="dropdown">
+{{#languages}}
+					<a href="{{root}}/{{currpage-canonical-filename}}" class="item" tabindex="0">{{name}}</a>
+{{/languages}}
+				</ul>
+			</div>
+		</div>
+{{/enable-language-dropdown}}
+		<div class="navbar">
+			<a href="." class="entry{{#page-gallery}} active{{/page-gallery}}">{{#i18n}}nav.gallery{{/i18n}}</a>
+			<a href="meteoriks.html" class="entry{{#page-meteoriks}} active{{/page-meteoriks}}">{{#i18n}}nav.meteoriks{{/i18n}}</a>
+			<a href="about.html" class="entry{{#page-about}} active{{/page-about}}">{{#i18n}}nav.about{{/i18n}}</a>
+		</div>
+		<div class="switch switch-right switch-toggle" id="switch-theme">
+			<input type="checkbox" id="theme-checkbox" />
+			<label class="label" for="theme-checkbox">
+				<span>{{#i18n}}global.toggle-theme{{/i18n}}</span>
+				{{{svg-moon}}}
+			</label>
+		</div>
+		<script src="/script.js"></script>

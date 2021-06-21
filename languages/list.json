@@ -1,0 +1,16 @@
+[
+	{
+		"id": "en",
+		"name": "English",
+		"root": ""
+	},
+	{
+		"id": "jp",
+		"name": "日本語",
+		"root": "/jp",
+		"visible": false,
+		"translators": [
+			"YOUR HANDLE HERE"
+		]
+	}
+]

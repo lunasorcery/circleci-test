@@ -1,0 +1,24 @@
+{{> header}}
+		<div class="content">
+			<div class="content-thing slim">
+				<div class="text">
+					<span class="question">{{#i18n}}meteoriks.what-are-meteoriks{{/i18n}}</span>
+					<div class="answer">
+						<p>{{#i18n}}meteoriks.what-are-meteoriks-p1{{/i18n}}</p>
+						<p>{{#i18n}}meteoriks.what-are-meteoriks-p2{{/i18n}}</p>
+{{#meteoriks-juror-application-open}}
+						<p>{{#i18n}}meteoriks.juror-application-open{{/i18n}}</p>
+{{/meteoriks-juror-application-open}}
+{{#meteoriks-nominations-open}}
+						<p>{{#i18n}}meteoriks.public-nominations-open{{/i18n}}</p>
+{{/meteoriks-nominations-open}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+{{#entries}}
+			{{> artwork}}
+{{/entries}}
+		</div>
+{{> footer}}

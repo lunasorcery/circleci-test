@@ -1,0 +1,21 @@
+<a name="{{slug}}"></a>
+<div class="content-thing">
+	<a href="{{demozoo_url}}" style="display:block">
+{{#meteorik-nominee}}
+		<div class="meteorik meteorik-nominee">{{#i18n}}badges.meteorik-nominee{{/i18n}}</div>
+{{/meteorik-nominee}}
+{{#meteorik-winner}}
+		<div class="meteorik meteorik-winner">{{#i18n}}badges.meteorik-winner{{/i18n}}</div>
+{{/meteorik-winner}}
+		<div class="text">
+			<span class="author">{{author}}</span>
+			<br/>
+			<span class="title">{{title}}</span>, <span class="party">{{party}}</span>
+			<br/>
+			<span class="subtitle">{{#i18n}}artwork.platform{{/i18n}}</span>
+		</div>
+		<div class="image">
+			<img src="{{image_url}}" loading="lazy"/>
+		</div>
+	</a>
+</div>

@@ -1,23 +1,19 @@
 version: 2.1
-executors:
-  exectr:
-    docker:
-      - image: lunasorcery/meson-template:0.0.1
-
 jobs:
   build:
-    executor: exectr
+    docker:
+      - image: cimg/python:3.9.5
     steps:
       - checkout
       - run:
-          name: Configure our milkshake 🥛
-          command: meson setup build
+          name: Fetch python dependences
+          command:  pip install -r requirements.txt
       - run:
-          name: Construct our milkshake
-          command: meson compile -C build
+          name: Fetch system dependencies
+          command: sudo apt update && sudo apt install inkscape imagemagick
       - run:
-          name: Drink our milkshake
-          command: ./build/demo
+          name: Build the site!
+          command: ./build-site.py
 
 workflows:
   version: 2
