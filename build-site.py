@@ -71,11 +71,11 @@ maybe_mkdir('gen/img/')
 
 print("generating icons...")
 if not os.path.exists('gen/apple-touch-icon.png'):
-	os.system(f"inkscape -w 160 -h 160 -o gen/apple-touch-icon.png icons/mobile-icon.svg")
+	os.system(f"inkscape -w 160 -h 160 --export-filename=gen/apple-touch-icon.png icons/mobile-icon.svg")
 if not os.path.exists('gen/favicon.ico'):
 	faviconSizes = [16,32,48]
 	for size in faviconSizes:
-		os.system(f"inkscape -w {size} -h {size} -o gen/favicon-{size}.png icons/favicon.svg")
+		os.system(f"inkscape -w {size} -h {size} --export-filename=gen/favicon-{size}.png icons/favicon.svg")
 	faviconPngs = [f"gen/favicon-{size}.png" for size in faviconSizes]
 	os.system(f"magick convert {' '.join(faviconPngs)} gen/favicon.ico")
 	for faviconPng in faviconPngs:
